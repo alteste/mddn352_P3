@@ -33,7 +33,10 @@
                         FB.api("/me/television", function (response) {
                               if (response && !response.error) {
                                   console.log(response.data[0].name);
-                                  tv = response.data[0].name;
+                                  tvshows = response.data;
+                                  tvlist = Math.floor(Math.random()*tvshows.length);
+                                  tv = response.data[tvlist].name;
+                                  
                                   console.log('yay');
                               }
                                 else { 
