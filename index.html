@@ -34,7 +34,7 @@
                             "/me/television",
                             function (response) {
                               if (response && !response.error) {
-                                console.log(response);
+                                console.log(response.data[0].name);
                                   console.log('yay');
                               }
                                 else { console.log('poos')}
