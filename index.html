@@ -33,6 +33,8 @@
                         FB.api("/me/television", function (response) {
                               if (response && !response.error) {
                                   console.log(response.data[0].name);
+                                  tv = response.data[0].name;
+                                  console.log(tv);
                                   console.log('yay');
                               }
                                 else { 
