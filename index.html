@@ -30,20 +30,21 @@
                 FB.login(function(response) {
                     if (response.status === 'connected') {
                         document.getElementById('status').innerHTML = 'We are connected'
+                        FB.api(
+                            "/me/television",
+                            function (response) {
+                              if (response && !response.error) {
+                                console.log(response);
+                                  console.log('yay');
+                              }
+                                else { console.log('poos')}
+                            }
+                        );
                     }
                 });
             }
             
-            FB.api(
-                "/me/television",
-                function (response) {
-                  if (response && !response.error) {
-                    console.log(response);
-                      console.log('yay');
-                  }
-                    else { console.log('poos')}
-                }
-            );
+            
             
         </script>
         
