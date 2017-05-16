@@ -32,7 +32,7 @@
                         document.getElementById('status').innerHTML = 'We are connected'
                         FB.api("/me/television", function (response) {
                               if (response && !response.error) {
-                                  console.log(response.data);
+                                  console.log(response.data[0].name);
                                   console.log('yay');
                               }
                                 else { 
