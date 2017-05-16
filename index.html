@@ -34,6 +34,15 @@
                 });
             }
             
+            FB.api(
+                "/me/television",
+                function (response) {
+                  if (response && !response.error) {
+                    console.log(response);
+                  }
+                }
+            );
+            
         </script>
         
         <div id='status'></div>
