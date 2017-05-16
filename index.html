@@ -53,14 +53,6 @@
             });
             FB.AppEvents.logPageView();
             };
-
-            FB.getLoginStatus(function(response) {
-                if (respone.status === 'connected') { 
-                    document.getElementById('status').innerHTML = 'We are connected.'; 
-                } else if (response.status === 'not_authorized') {
-                    document.getElementById('status').innerHTML = 'We are not logged in.';        
-                }
-            });
             
             (function(d, s, id){
              var js, fjs = d.getElementsByTagName(s)[0];
