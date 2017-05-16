@@ -32,7 +32,6 @@
                         document.getElementById('status').innerHTML = 'We are connected'
                         FB.api("/me/television", function (response) {
                               if (response && !response.error) {
-                                  console.log(response.data[0].name);
                                   tvshows = response.data;
                                   tvlist = Math.floor(Math.random()*tvshows.length);
                                   tv = response.data[tvlist].name;
@@ -150,7 +149,6 @@
                         wordsummary = JSON.parse(getWeather.responseText).hourly.summary;
                         wordsummary = wordsummary.replace('.', '');
                         document.getElementById("wordsummaryhere").innerHTML = wordsummary;
-                        console.log(wordsummary);
                         
 //                        icons from Giacomo Drudi and icon 54 from noun project
                         
@@ -213,7 +211,6 @@
                         tempf = JSON.parse(getWeather.responseText).currently.temperature;
                         tempc = Math.round((tempf - 32) * 5 / 9);
                         document.getElementById("temphere").innerHTML = tempc + '&deg';
-                        console.log(tempc);
                         
                         if (tempc <= 14) {
                             summary.push('cold', 'freeze');
@@ -250,7 +247,7 @@
             function getGif() {
                 
                 terms = ['harry-potter']
-                tv = tv.replace(' ', '-');
+//                tv = tv.replace(' ', '-');
                 console.log(tv);
                 term = terms[Math.floor(Math.random()*terms.length)];
                 q = condition + "-" + term; // search query
