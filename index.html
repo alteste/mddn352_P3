@@ -27,7 +27,11 @@
             }(document, 'script', 'facebook-jssdk'));
             
             function login() {
-                FB.login();
+                FB.login(function(response) {
+                    if (response.status === 'connected') {
+                        document.getElementById('status').innerHTML = 'We are connected'
+                    }
+                });
             }
             
         </script>
