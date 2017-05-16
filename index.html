@@ -31,15 +31,15 @@
                     if (response.status === 'connected') {
                         document.getElementById('status').innerHTML = 'We are connected'
                         FB.api(
-                            "/me/television",
-                            function (response) {
-                              if (response && !response.error) {
-                                  tv response.data[0].name;
-                                  console.log(tv);
-                              }
-                                else { console.log('poos')}
-                            }
-                        );
+                                "/me/television",
+                                function (response) {
+                                  if (response && !response.error) {
+                                    console.log(response);
+                                      console.log('yay');
+                                  }
+                                    else { console.log('poos')}
+                                }
+                            );
                     }
                 });
             }
