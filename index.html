@@ -7,6 +7,31 @@
     </head>
     <body onload="getLocation()">
         
+        <script>
+            
+            window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '1052694044875700',
+              xfbml      : true,
+              version    : 'v2.9'
+            });
+            FB.AppEvents.logPageView();
+            };
+            
+            (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/en_US/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+            
+            function login() {
+                FB.login();
+            }
+            
+        </script>
+        
         <div id='status'></div>
         <button onclick="login()">Login</button>
         
@@ -44,28 +69,6 @@
         </div>    
         
         <script>
-            
-            window.fbAsyncInit = function() {
-            FB.init({
-              appId      : '1052694044875700',
-              xfbml      : true,
-              version    : 'v2.9'
-            });
-            FB.AppEvents.logPageView();
-            };
-            
-            (function(d, s, id){
-             var js, fjs = d.getElementsByTagName(s)[0];
-             if (d.getElementById(id)) {return;}
-             js = d.createElement(s); js.id = id;
-             js.src = "//connect.facebook.net/en_US/sdk.js";
-             fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-            
-            function login() {
-                FB.login();
-            }
-            
             
             var weekday = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
             var months = new Array ("January","February","March","April","May","June","July","August","September","Ocotber","November","December");
