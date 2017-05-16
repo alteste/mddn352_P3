@@ -34,7 +34,6 @@
                               if (response && !response.error) {
                                   console.log(response.data[0].name);
                                   tv = response.data[0].name;
-                                  console.log(tv);
                                   console.log('yay');
                               }
                                 else { 
@@ -246,7 +245,9 @@
             
             function getGif() {
                 
-                terms = ['harry-potter']
+//                terms = ['harry-potter']
+                tv = tv.replace(' ', '-');
+                console.log(tv);
                 term = terms[Math.floor(Math.random()*terms.length)];
                 q = condition + "-" + term; // search query
                 
