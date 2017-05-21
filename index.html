@@ -4,6 +4,7 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="main.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     </head>
     <body>
         
@@ -48,45 +49,58 @@
                 }, {scope: 'user_likes'});
             }
             
-            
+            $(document).ready(function() {
+                $("#mpLink").click(function(){
+                    $('.login').hide(1);
+                    $('.forecast').show(1);
+                });
+            });
             
         </script>
         
-        <div id='status'></div>
-        <button onclick="login()">Login</button>
+        <div class="login">
         
-        <div class="row">
-            <div class="col-12">
-                <h1>Daily Forecast</h1>
-            </div>
+            <div id='status'></div>
+            <button id="mplink" onclick="login()">Login</button>
+        
         </div>
+            
+        <div class="forecast">
         
-        <div class="row">
-            <div class="col-12">
-                <p id="cityhere"> </p>
-                <p id="dayDate"></p>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-12">
-                <div id="content"><span id = "giphyme"></span></div>
-            </div>
-        </div>
-        
-        <div class="row" id="yowza">
-            <div class="col-6" id="summaryhere">
-            </div>
-            <div class="col-6 yoyo"> 
-                <div id="temphere">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Daily Forecast</h1>
                 </div>
             </div>
-        </div>    
-            
-        <div class="row">  
-            <div class="col-12" id="wordsummaryhere">
+
+            <div class="row">
+                <div class="col-12">
+                    <p id="cityhere"> </p>
+                    <p id="dayDate"></p>
+                </div>
             </div>
-        </div>    
+
+            <div class="row">
+                <div class="col-12">
+                    <div id="content"><span id = "giphyme"></span></div>
+                </div>
+            </div>
+
+            <div class="row" id="yowza">
+                <div class="col-6" id="summaryhere">
+                </div>
+                <div class="col-6 yoyo"> 
+                    <div id="temphere">
+                    </div>
+                </div>
+            </div>    
+
+            <div class="row">  
+                <div class="col-12" id="wordsummaryhere">
+                </div>
+            </div> 
+            
+        </div>
         
         <script>
             
