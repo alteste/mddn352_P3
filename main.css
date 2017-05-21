@@ -35,6 +35,16 @@ body {
     color: #E6567A;
 }
 
+#logo {
+    width: 200px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
 .forecast {
     display: none;
 }
