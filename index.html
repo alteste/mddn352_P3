@@ -197,7 +197,7 @@
                         }
                         
                         else if (summary == 'rain') {
-                            summary = ['rain', 'wet', 'water'];
+                            summary = ['rain'];
                             document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/rain.png">';
                         }
                         
@@ -237,8 +237,8 @@
                         }
                         
                         else {
-                            summary = ['clear'];
-                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/clear-day.png">';
+                            summary = ['weather'];
+                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/partly-cloudy-day.png">';
                         };
                         
                         
@@ -247,12 +247,12 @@
                         document.getElementById("temphere").innerHTML = tempc + '&deg';
                         
                         if (tempc <= 14) {
-                            summary.push('cold', 'freeze');
+                            summary.push('cold');
                             document.getElementById("yowza").style.backgroundColor="#7658F8";
                             document.body.style.color="#7658F8";
                         }
                         else if (tempc >= 18) {
-                            summary.push('hot','warm','heat', 'burn')
+                            summary.push('warm','heat')
                             document.getElementById("yowza").style.backgroundColor="#E6567A";
                             document.body.style.color="#E6567A";
                         }
@@ -288,7 +288,7 @@
                 console.log(q);
                 
                 request = new XMLHttpRequest;
-                request.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&rating=pg&q='+tv, true);
+                request.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&rating=pg&q='+q, true);
 
                 request.onreadystatechange = function() {
                     if (request.readyState == 4 && request.status == 200){
