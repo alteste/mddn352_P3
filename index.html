@@ -263,17 +263,15 @@
             
             function getGif() {
                 
-                terms = ['harry-potter']
-//                tv = tv.replace(' ', '-');
+                backupTerms = ['harry-potter']
                 console.log(tv);
-                term = terms[Math.floor(Math.random()*terms.length)];
-                q = condition + "-" + term; // search query
+                backupTerm = backupTerms[Math.floor(Math.random()*backupTerms.length)];
+                q = condition + "-" + tv; // search query
                 
                 console.log(q);
                 
                 request = new XMLHttpRequest;
-//                request.open('GET', 'https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag='+term, true);
-                request.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q='+tv, true);
+                request.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q='+q, true);
 
                 request.onreadystatechange = function() {
                     if (request.readyState == 4 && request.status == 200){
