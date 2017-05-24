@@ -53,13 +53,11 @@
             
             function getShow() {
                 FB.api("/me/television", function (response) {
-                    console.log(response);
                       if (response && !response.error) {
                           tvshows = response.data;
                           tvlist = Math.floor(Math.random()*tvshows.length);
                           tv = response.data[tvlist].name;
-
-                          console.log(tv);
+                          
                           console.log('yay');
                       }
                         else { 
@@ -104,7 +102,7 @@
 
             <div class="row">
                 <div class="col-12">
-                    <div id="content" onclick="getShow()"><span id = "giphyme"></span></div>
+                    <div id="content" onclick="getShow(); getGif();"><span id = "giphyme"></span></div>
                 </div>
             </div>
 
