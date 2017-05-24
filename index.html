@@ -31,7 +31,7 @@
             function login() {
                 FB.login(function(response) {
                     
-                    console.log(response);
+                    
                     if (response.status === 'connected') {
                         FB.api("/me/television", function (response) {
                               if (response && !response.error) {
@@ -49,6 +49,24 @@
                         getLocation();
                     }
                 }, {scope: 'user_likes'});
+            }
+            
+            function getShow() {
+                FB.api("/me/television", function (response) {
+                    console.log(response);
+                      if (response && !response.error) {
+                          tvshows = response.data;
+                          tvlist = Math.floor(Math.random()*tvshows.length);
+                          tv = response.data[tvlist].name;
+
+                          console.log(response);
+                          console.log('yay');
+                      }
+                        else { 
+                            console.log('oh no');
+                        }
+                    }
+                );
             }
             
         </script>
