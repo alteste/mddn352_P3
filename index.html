@@ -30,6 +30,8 @@
             
             function login() {
                 FB.login(function(response) {
+                    
+                    console.log(response);
                     if (response.status === 'connected') {
                         FB.api("/me/television", function (response) {
                               if (response && !response.error) {
@@ -38,7 +40,6 @@
                                   tv = response.data[tvlist].name;
                                   
                                   console.log('yay');
-                                  console.log(response);
                               }
                                 else { 
                                     console.log('oh no');
