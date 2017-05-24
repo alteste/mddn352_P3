@@ -4,43 +4,10 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="main.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="script.js"></script>
     </head>
-    <body onload="getLocation()">
-        
-        <button onclick="login()">Login</button>
-        
-        <div class="row">
-            <div class="col-12">
-                <h1>Daily Forecast</h1>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-12">
-                <p id="cityhere"> </p>
-                <p id="dayDate"></p>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-12">
-                <div id="content"><span id = "giphyme"></span></div>
-            </div>
-        </div>
-        
-        <div class="row" id="yowza">
-            <div class="col-6" id="summaryhere">
-            </div>
-            <div class="col-6 yoyo"> 
-                <div id="temphere">
-                </div>
-            </div>
-        </div>    
-            
-        <div class="row">  
-            <div class="col-12" id="wordsummaryhere">
-            </div>
-        </div>    
+    <body>
         
         <script>
             
@@ -52,10 +19,6 @@
             });
             FB.AppEvents.logPageView();
             };
-
-//            FB.getLoginStatus(function(response) {
-//                statusChangeCallback(response);
-//            });
             
             (function(d, s, id){
              var js, fjs = d.getElementsByTagName(s)[0];
@@ -66,9 +29,85 @@
             }(document, 'script', 'facebook-jssdk'));
             
             function login() {
-                FB.login();
+                FB.login(function(response) {
+                    if (response.status === 'connected') {
+                        document.getElementById('status').innerHTML = 'We are connected'
+                        FB.api("/me/television", function (response) {
+                              if (response && !response.error) {
+                                  tvshows = response.data;
+                                  tvlist = Math.floor(Math.random()*tvshows.length);
+                                  tv = response.data[tvlist].name;
+                                  
+                                  console.log('yay');
+                              }
+                                else { 
+                                    console.log('poos');
+                                }
+                            }
+                        );
+                        getLocation();
+                    }
+                }, {scope: 'user_likes'});
             }
             
+            
+        </script>
+        
+        <div class="login">
+            
+            <div class="row splash">
+                <div class="col-12">
+                    <img src="logoType.png" id="logo"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div>
+                </div>
+            </div>
+            <div id='status'></div>
+            
+        
+        </div>
+            
+        <div class="forecast">
+        
+            <div class="row">
+                <div class="col-12">
+                    <h1>Daily Forecast</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <p id="cityhere"> </p>
+                    <p id="dayDate"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div id="content"><span id = "giphyme"></span></div>
+                </div>
+            </div>
+
+            <div class="row" id="yowza">
+                <div class="col-6" id="summaryhere">
+                </div>
+                <div class="col-6 yoyo"> 
+                    <div id="temphere">
+                    </div>
+                </div>
+            </div>    
+
+            <div class="row">  
+                <div class="col-12" id="wordsummaryhere">
+                </div>
+            </div> 
+            
+        </div>
+        
+        <script>
             
             var weekday = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
             var months = new Array ("January","February","March","April","May","June","July","August","September","Ocotber","November","December");
@@ -129,7 +168,6 @@
                         wordsummary = JSON.parse(getWeather.responseText).hourly.summary;
                         wordsummary = wordsummary.replace('.', '');
                         document.getElementById("wordsummaryhere").innerHTML = wordsummary;
-                        console.log(wordsummary);
                         
 //                        icons from Giacomo Drudi and icon 54 from noun project
                         
@@ -192,7 +230,6 @@
                         tempf = JSON.parse(getWeather.responseText).currently.temperature;
                         tempc = Math.round((tempf - 32) * 5 / 9);
                         document.getElementById("temphere").innerHTML = tempc + '&deg';
-                        console.log(tempc);
                         
                         if (tempc <= 14) {
                             summary.push('cold', 'freeze');
@@ -229,6 +266,8 @@
             function getGif() {
                 
                 terms = ['harry-potter']
+//                tv = tv.replace(' ', '-');
+                console.log(tv);
                 term = terms[Math.floor(Math.random()*terms.length)];
                 q = condition + "-" + term; // search query
                 
@@ -236,7 +275,7 @@
                 
                 request = new XMLHttpRequest;
 //                request.open('GET', 'https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag='+term, true);
-                request.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q='+term, true);
+                request.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q='+tv, true);
 
                 request.onreadystatechange = function() {
                     if (request.readyState == 4 && request.status == 200){
