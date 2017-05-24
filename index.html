@@ -50,23 +50,22 @@
             }
             
             function getShow() {
-                    if (response.status === 'connected') {
-                        FB.api("/me/television", function (response) {
-                              if (response && !response.error) {
-                                  tvshows = response.data;
-                                  tvlist = Math.floor(Math.random()*tvshows.length);
-                                  tv = response.data[tvlist].name;
-                                  
-                                  console.log('yay');
-                              }
-                                else { 
-                                    console.log('oh no');
-                                }
-                            }
-                        );
+                FB.api("/me/television" {
+                      if (response && !response.error) {
+                          tvshows = response.data;
+                          tvlist = Math.floor(Math.random()*tvshows.length);
+                          tv = response.data[tvlist].name;
+
+                          console.log('yay');
+                      }
+                        else { 
+                            console.log('oh no');
+                        }
                     }
-                }
-            
+                );
+            }
+
+
             
         </script>
         
