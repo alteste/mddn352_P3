@@ -38,6 +38,7 @@
                                   tv = response.data[tvlist].name;
                                   
                                   console.log('yay');
+                                  console.log(response);
                               }
                                 else { 
                                     console.log('oh no');
@@ -48,24 +49,6 @@
                     }
                 }, {scope: 'user_likes'});
             }
-            
-            function getShow() {
-                FB.api("/me/television" {
-                      if (response && !response.error) {
-                          tvshows = response.data;
-                          tvlist = Math.floor(Math.random()*tvshows.length);
-                          tv = response.data[tvlist].name;
-
-                          console.log('yay');
-                      }
-                        else { 
-                            console.log('oh no');
-                        }
-                    }
-                );
-            }
-
-
             
         </script>
         
