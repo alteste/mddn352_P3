@@ -271,7 +271,7 @@
                 console.log(q);
                 
                 request = new XMLHttpRequest;
-                request.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q='+q, true);
+                request.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&rating=pg&q='+q, true);
 
                 request.onreadystatechange = function() {
                     if (request.readyState == 4 && request.status == 200){
