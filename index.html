@@ -99,10 +99,10 @@
             </div>
 
             <div class="row" id="weatherInfoContainer">
-                <div class="col-6" id="summaryhere">
+                <div class="col-6" id="displayWeatherIcon">
                 </div>
-                <div class="col-6 yoyo"> 
-                    <div id="temphere">
+                <div class="col-6 temperatureContainer"> 
+                    <div id="displayTemperature">
                     </div>
                 </div>
             </div>    
@@ -176,63 +176,63 @@
                         
                         if (summary == 'clear-day') {
                             summary = ['sun'];
-                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/clear-day.png">';
+                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/clear-day.png">';
                         }
                         
                         else if (summary == 'clear-night') {
                             summary = ['night', 'moon'];
-                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/clear-night.png">';
+                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/clear-night.png">';
                         }
                         
                         else if (summary == 'rain') {
                             summary = ['rain'];
-                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/rain.png">';
+                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/rain.png">';
                         }
                         
                         else if (summary == 'snow') {
                             summary = ['snow'];
-                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/snow.png">';
+                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/snow.png">';
                         }
                         
                         else if (summary == 'sleet') {
                             summary = ['sleet'];
-                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/rain.png">';
+                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/rain.png">';
                         }
                         
                         else if (summary == 'wind') {
                             summary = ['wind', 'breeze'];
-                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/wind.png">';
+                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/wind.png">';
                         }
                         
                         else if (summary == 'fog') {
                             summary = ['fog'];
-                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/fog.png">';
+                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/fog.png">';
                         }
                         
                         else if (summary == 'cloudy') {
                             summary = ['cloud'];
-                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/cloud.png">';
+                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/cloud.png">';
                         }
                         
                         else if (summary == 'partly-cloudy-day') {
                             summary = ['cloud'];
-                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/partly-cloudy-day.png">';
+                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/partly-cloudy-day.png">';
                         }
                         
                         else if (summary == 'partly-cloudy-night') {
                             summary = ['cloud', 'night', 'moon'];
-                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/partly-cloudy-night.png">';
+                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/partly-cloudy-night.png">';
                         }
                         
                         else {
                             summary = ['weather'];
-                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/partly-cloudy-day.png">';
+                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/partly-cloudy-day.png">';
                         };
                         
                         
                         tempf = JSON.parse(getWeather.responseText).currently.temperature;
                         tempc = Math.round((tempf - 32) * 5 / 9);
-                        document.getElementById("temphere").innerHTML = tempc + '&deg';
+                        document.getElementById("displayTemperature").innerHTML = tempc + '&deg';
                         
                         if (tempc <= 14) {
                             summary.push('cold');
@@ -257,7 +257,7 @@
                         getGif();
                         
                     } else {
-                        document.getElementById("summaryhere").innerHTML = 'reached darksky, but API returned an error';
+                        document.getElementById("displayWeatherIcon").innerHTML = 'reached darksky, but API returned an error';
                      }
                 };
                 

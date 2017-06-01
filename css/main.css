@@ -104,7 +104,7 @@ img {
   font-size: 18px;
   transition: .3s ease-in-out; }
 
-#summaryhere {
+#displayWeatherIcon {
   text-align: right;
   height: 52px; }
 
@@ -113,10 +113,10 @@ img {
   height: 45px;
   padding-right: 5px; }
 
-.yoyo {
+.temperatureContainer {
   display: table; }
 
-#temphere {
+#displayTemperature {
   height: 50px;
   font-size: 30px;
   display: table-cell;
