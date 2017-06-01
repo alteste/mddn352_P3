@@ -1,6 +1,6 @@
 $(document).ready(function() {
                 $("#fbLoginButton").click(function(){
-                    $('.login').hide(1);
-                    $('.forecast').show(1);
+                    $('.loginPage').hide(1);
+                    $('.forecastPage').show(1);
                 });
             });
