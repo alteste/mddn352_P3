@@ -1,3 +1,6 @@
+$primaryColorRed: #E6567A
+$primaryColorBlue: #E6567A
+$primaryColorPurple: #E6567A
 
 * {
     box-sizing: border-box;
@@ -32,7 +35,18 @@ body {
     font-family: 'Arial Black', Arial, sans-serif;
     font-weight: bolder;
     text-transform: uppercase;
-    color: #E6567A;
+    color: $primaryColorRed;
+}
+
+h1 {
+    font-size: 26px;
+    margin: 10px;
+    text-align: right;
+}
+
+p {
+    margin: 10px;
+    text-align: right;
 }
 
 .loginPage {
@@ -58,17 +72,6 @@ body {
 
 .forecastPage {
     display: none;
-}
-
-h1 {
-    font-size: 26px;
-    margin: 10px;
-    text-align: right;
-}
-
-p {
-    margin: 10px;
-    text-align: right;
 }
 
 #displayCity {

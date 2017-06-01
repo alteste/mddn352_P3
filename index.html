@@ -158,14 +158,14 @@
             };
             
             function getWeatherData() {
-                getWeather = new XMLHttpRequest;
-                getWeather.open('GET', "https://thingproxy.freeboard.io/fetch/https://api.darksky.net/forecast/28cfc3c13db8141f0a326f7eaa938d50/" + lat + "," + long, true);
+                weatherRequest = new XMLHttpRequest;
+                weatherRequest.open('GET', "https://thingproxy.freeboard.io/fetch/https://api.darksky.net/forecast/28cfc3c13db8141f0a326f7eaa938d50/" + lat + "," + long, true);
 //                        powered by darksky
-                getWeather.onreadystatechange = function() {
-                    if (getWeather.readyState == 4 && getWeather.status == 200){
-                        summaryWord = JSON.parse(getWeather.responseText).currently.icon;
+                weatherRequest.onreadystatechange = function() {
+                    if (weatherRequest.readyState == 4 && weatherRequest.status == 200){
+                        summaryWord = JSON.parse(weatherRequest.responseText).currently.icon;
                         
-                        weatherSummary = JSON.parse(getWeather.responseText).hourly.summary;
+                        weatherSummary = JSON.parse(weatherRequest.responseText).hourly.summary;
                         weatherSummary = weatherSummary.replace('.', '');
                         document.getElementById("displayWeatherSummary").innerHTML = weatherSummary;
                         
@@ -246,10 +246,7 @@
                             document.body.style.color="#00C0E4";
                         }
                         
-                        
-                        
-                        condition = summaryWord[Math.floor(Math.random()*summaryWord.length)];
-                        console.log(condition);
+                        weatherCondition = summaryWord[Math.floor(Math.random()*summaryWord.length)];
                         
                         getGif();
                         
@@ -264,29 +261,21 @@
             
             function getGif() {
                 
-                backupTerms = ['harry-potter']
-                backupTerm = backupTerms[Math.floor(Math.random()*backupTerms.length)];
-                q = condition + "-" + tvShow; // search query
+                backupTermsList = ['harry-potter']
+                backupTerm = backupTermsList[Math.floor(Math.random()*backupTermsList.length)];
+                searchQuery = weatherCondition + "-" + tvShow; // search query
                 
-                console.log(tvShow);
-                console.log(q);
-                
-                request = new XMLHttpRequest;
-                request.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&rating=pg&q='+tvShow, true);
-                request.onreadystatechange = function() {
-                    if (request.readyState == 4 && request.status == 200){
+                gifRequest = new XMLHttpRequest;
+                gifRequest.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&rating=pg&q='+tvShow, true);
+                gifRequest.onreadystatechange = function() {
+                    if (gifRequest.readyState == 4 && gifRequest.status == 200){
                         randData = Math.floor(Math.random()*24);
-                        console.log(randData);
-//                        data = JSON.parse(request.responseText).data.image_url;
-                        data = JSON.parse(request.responseText).data[randData].images.original.url;
-                        data = data.replace(/^http:\/\//i, 'https://');
-                        document.getElementById("giphyme").innerHTML = '<center><img src = "'+data+'"  title="GIF via Giphy"></center>';
-                    } else {
-//                        document.getElementById("giphyme").innerHTML = 'reached giphy, but API returned an error';
-                     }
+                        gifUrl = JSON.parse(gifRequest.responseText).data[randData].images.original.url;
+                        gifUrl = gifUrl.replace(/^http:\/\//i, 'https://');
+                        document.getElementById("giphyme").innerHTML = '<center><img src = "'+gifUrl+'"  title="GIF via Giphy"></center>';
+                    }
                 };
-                request.send();
-                
+                gifRequest.send();
             };
                 
         </script>
