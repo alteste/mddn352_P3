@@ -234,7 +234,9 @@
                         if (tempc <= 14) {
                             summaryWord.push('cold');
                             document.getElementById("weatherInfoContainer").style.backgroundColor="#7658F8";
+                            document.getElementById("displayWeatherSummary").style.background="linear-gradient(to bottom right, red, yellow);";
                             document.body.style.color="#7658F8";
+                            
                         }
                         else if (tempc >= 18) {
                             summaryWord.push('warm','heat')
