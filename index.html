@@ -227,7 +227,7 @@
                         };
                         
                         
-                        tempf = JSON.parse(getWeather.responseText).currently.temperature;
+                        tempf = JSON.parse(weatherRequest.responseText).currently.temperature;
                         tempc = Math.round((tempf - 32) * 5 / 9);
                         document.getElementById("displayTemperature").innerHTML = tempc + '&deg';
                         
