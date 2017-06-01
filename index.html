@@ -108,7 +108,7 @@
             </div>    
 
             <div class="row">  
-                <div class="col-12" id="wordsummaryhere">
+                <div class="col-12" id="displayWeatherSummary">
                 </div>
             </div> 
             
@@ -140,10 +140,9 @@
             };
             
             function getPlace() {  
-                
-                url = "https://thingproxy.freeboard.io/fetch/https://nominatim.openstreetmap.org/reverse?format=json&lat=" + lat + "&lon=" + long;
+                nominatimUrl = "https://thingproxy.freeboard.io/fetch/https://nominatim.openstreetmap.org/reverse?format=json&lat=" + lat + "&lon=" + long;
                 getCity = new XMLHttpRequest;
-                getCity.open('GET', url, true);
+                getCity.open('GET', nominatimUrl, true);
                 
                 getCity.onreadystatechange = function() {
                     
@@ -155,7 +154,6 @@
                         document.getElementById("displayCity").innerHTML = 'reached nominatim, but API returned an error';
                      }
                 };
-                
                 getCity.send();
             };
             
@@ -165,67 +163,66 @@
 //                        powered by darksky
                 getWeather.onreadystatechange = function() {
                     if (getWeather.readyState == 4 && getWeather.status == 200){
-                        summary = JSON.parse(getWeather.responseText).currently.icon;
-                        console.log(summary);
+                        summaryWord = JSON.parse(getWeather.responseText).currently.icon;
                         
-                        wordsummary = JSON.parse(getWeather.responseText).hourly.summary;
-                        wordsummary = wordsummary.replace('.', '');
-                        document.getElementById("wordsummaryhere").innerHTML = wordsummary;
+                        weatherSummary = JSON.parse(getWeather.responseText).hourly.summary;
+                        weatherSummary = weatherSummary.replace('.', '');
+                        document.getElementById("displayWeatherSummary").innerHTML = weatherSummary;
                         
 //                        icons from Giacomo Drudi and icon 54 from noun project
                         
-                        if (summary == 'clear-day') {
-                            summary = ['sun'];
+                        if (summaryWord == 'clear-day') {
+                            summaryWord = ['sun'];
                             document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/clear-day.png">';
                         }
                         
-                        else if (summary == 'clear-night') {
-                            summary = ['night', 'moon'];
+                        else if (summaryWord == 'clear-night') {
+                            summaryWord = ['night', 'moon'];
                             document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/clear-night.png">';
                         }
                         
-                        else if (summary == 'rain') {
-                            summary = ['rain'];
+                        else if (summaryWord == 'rain') {
+                            summaryWord = ['rain'];
                             document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/rain.png">';
                         }
                         
-                        else if (summary == 'snow') {
-                            summary = ['snow'];
+                        else if (summaryWord == 'snow') {
+                            summaryWord = ['snow'];
                             document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/snow.png">';
                         }
                         
-                        else if (summary == 'sleet') {
-                            summary = ['sleet'];
+                        else if (summaryWord == 'sleet') {
+                            summaryWord = ['sleet'];
                             document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/rain.png">';
                         }
                         
-                        else if (summary == 'wind') {
-                            summary = ['wind', 'breeze'];
+                        else if (summaryWord == 'wind') {
+                            summaryWord = ['wind', 'breeze'];
                             document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/wind.png">';
                         }
                         
-                        else if (summary == 'fog') {
-                            summary = ['fog'];
+                        else if (summaryWord == 'fog') {
+                            summaryWord = ['fog'];
                             document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/fog.png">';
                         }
                         
-                        else if (summary == 'cloudy') {
-                            summary = ['cloud'];
+                        else if (summaryWord == 'cloudy') {
+                            summaryWord = ['cloud'];
                             document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/cloud.png">';
                         }
                         
-                        else if (summary == 'partly-cloudy-day') {
-                            summary = ['cloud'];
+                        else if (summaryWord == 'partly-cloudy-day') {
+                            summaryWord = ['cloud'];
                             document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/partly-cloudy-day.png">';
                         }
                         
-                        else if (summary == 'partly-cloudy-night') {
-                            summary = ['cloud', 'night', 'moon'];
+                        else if (summaryWord == 'partly-cloudy-night') {
+                            summaryWord = ['cloud', 'night', 'moon'];
                             document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/partly-cloudy-night.png">';
                         }
                         
                         else {
-                            summary = ['weather'];
+                            summaryWord = ['weather'];
                             document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/partly-cloudy-day.png">';
                         };
                         
@@ -235,12 +232,12 @@
                         document.getElementById("displayTemperature").innerHTML = tempc + '&deg';
                         
                         if (tempc <= 14) {
-                            summary.push('cold');
+                            summaryWord.push('cold');
                             document.getElementById("weatherInfoContainer").style.backgroundColor="#7658F8";
                             document.body.style.color="#7658F8";
                         }
                         else if (tempc >= 18) {
-                            summary.push('warm','heat')
+                            summaryWord.push('warm','heat')
                             document.getElementById("weatherInfoContainer").style.backgroundColor="#E6567A";
                             document.body.style.color="#E6567A";
                         }
@@ -251,7 +248,7 @@
                         
                         
                         
-                        condition = summary[Math.floor(Math.random()*summary.length)];
+                        condition = summaryWord[Math.floor(Math.random()*summaryWord.length)];
                         console.log(condition);
                         
                         getGif();
