@@ -126,9 +126,7 @@ img {
 
 #displayWeatherSummary {
   padding: 20px;
-  text-align: center; }
-
-.clip-text {
+  text-align: center;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
