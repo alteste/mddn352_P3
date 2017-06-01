@@ -94,11 +94,11 @@
 
             <div class="row">
                 <div class="col-12">
-                    <div id="content" onclick="getShow(); getGif();"><span id = "giphyme"></span></div>
+                    <div id="gifContainer" onclick="getShow(); getGif();"><span id = "giphyme"></span></div>
                 </div>
             </div>
 
-            <div class="row" id="yowza">
+            <div class="row" id="weatherInfoContainer">
                 <div class="col-6" id="summaryhere">
                 </div>
                 <div class="col-6 yoyo"> 
@@ -236,16 +236,16 @@
                         
                         if (tempc <= 14) {
                             summary.push('cold');
-                            document.getElementById("yowza").style.backgroundColor="#7658F8";
+                            document.getElementById("weatherInfoContainer").style.backgroundColor="#7658F8";
                             document.body.style.color="#7658F8";
                         }
                         else if (tempc >= 18) {
                             summary.push('warm','heat')
-                            document.getElementById("yowza").style.backgroundColor="#E6567A";
+                            document.getElementById("weatherInfoContainer").style.backgroundColor="#E6567A";
                             document.body.style.color="#E6567A";
                         }
                         else {
-                            document.getElementById("yowza").style.backgroundColor="#00C0E4";
+                            document.getElementById("weatherInfoContainer").style.backgroundColor="#00C0E4";
                             document.body.style.color="#00C0E4";
                         }
                         
