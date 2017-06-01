@@ -1,6 +1,5 @@
 <!DOCTYPE>
 <html>
-    
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -8,10 +7,10 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="script.js"></script>
     </head>
-    
     <body>
         
         <script>
+            
             window.fbAsyncInit = function() {
             FB.init({
               appId      : '1052694044875700',
@@ -29,16 +28,23 @@
              fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
             
-            function fblogin() {
+            function login() {
                 FB.login(function(response) {
+                    
+                    
                     if (response.status === 'connected') {
                         FB.api("/me/television", function (response) {
                               if (response && !response.error) {
-                                  tvShowsList = response.data;
-                                  numberOfShows = Math.floor(Math.random()*tvShowsList.length);
-                                  tvShow = response.data[numberOfShows].name;
-                                  tvShow = tvShow.replace('(TV Show)', 'tv');
+                                  tvshows = response.data;
+                                  tvlist = Math.floor(Math.random()*tvshows.length);
+                                  tv = response.data[tvlist].name;
+                                  tv = tv.replace('(TV Show)', 'tv');
+                                  
+                                  console.log('yay');
                               }
+                                else { 
+                                    console.log('oh no');
+                                }
                             }
                         );
                         getLocation();
@@ -49,57 +55,73 @@
             function getShow() {
                 FB.api("/me/television", function (response) {
                       if (response && !response.error) {
-                          tvShowsList = response.data;
-                          numberOfShows = Math.floor(Math.random()*tvShowsList.length);
-                          tvShow = response.data[numberOfShows].name;
-                          tvShow = tvShow.replace('(TV Show)', 'tv');
+                          tvshows = response.data;
+                          tvlist = Math.floor(Math.random()*tvshows.length);
+                          tv = response.data[tvlist].name;
+                          tv = tv.replace('(TV Show)', 'tv');
+                          
+                          console.log('yay');
+                      }
+                        else { 
+                            console.log('oh no');
+                        }
                     }
-                });
+                );
             }
+            
         </script>
         
-        <div class="loginPage">
-            <div class="row splashContent">
+        <div class="login">
+            
+            <div class="row splash">
                 <div class="col-12">
                     <img src="logoType.png" id="logo"/>
                 </div>
                 <div class="col-12">
-                    <div id="fbLoginButton" onclick="fblogin()">
+                    <div id="click" onclick="login()">
                         <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div>
                     </div>
                 </div>
             </div>
+            
+        
         </div>
             
-        <div class="forecastPage">
+        <div class="forecast">
+        
             <div class="row">
                 <div class="col-12">
                     <h1>Daily Forecast</h1>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-12">
-                    <p id="displayCity"></p>
-                    <p id="displayDate"></p>
+                    <p id="cityhere"> </p>
+                    <p id="dayDate"></p>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-12">
-                    <div class="displayGif" onclick="getShow(); getGif();"><span id = "giphyme"></span></div>
+                    <div id="content" onclick="getShow(); getGif();"><span id = "giphyme"></span></div>
                 </div>
             </div>
-            <div class="row" id="weatherInfoContainer">
-                <div class="col-6" id="displayWeatherIcon">
+
+            <div class="row" id="yowza">
+                <div class="col-6" id="summaryhere">
                 </div>
-                <div class="col-6 temperatureContainer"> 
-                    <div id="displayTemperature">
+                <div class="col-6 yoyo"> 
+                    <div id="temphere">
                     </div>
                 </div>
             </div>    
+
             <div class="row">  
-                <div class="col-12" id="displayWeatherSummary">
+                <div class="col-12" id="wordsummaryhere">
                 </div>
             </div> 
+            
         </div>
         
         <script>
@@ -111,22 +133,26 @@
             
             var dd = today.getDate();
             
-            document.getElementById("displayDate").innerHTML = weekday[today.getDay()] + " " + dd + "<br>" + months[today.getMonth()];
+            document.getElementById("dayDate").innerHTML = weekday[today.getDay()] + " " + dd + "<br>" + months[today.getMonth()];
 
             function getLocation() {
+                
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(showPosition);
                 }
-            }
+            };
 
             function showPosition(position) {
+                
                 lat = position.coords.latitude;
                 long = position.coords.longitude;
                 getPlace();
                 getWeatherData();
-            }
+                
+            };
             
             function getPlace() {  
+                
                 url = "https://thingproxy.freeboard.io/fetch/https://nominatim.openstreetmap.org/reverse?format=json&lat=" + lat + "&lon=" + long;
                 getCity = new XMLHttpRequest;
                 getCity.open('GET', url, true);
@@ -134,16 +160,20 @@
                 getCity.onreadystatechange = function() {
                     
                     if (getCity.readyState == 4 && getCity.status == 200){
+                        
                         city = JSON.parse(getCity.responseText).address.state;
-                        document.getElementById("displayCity").innerHTML = city;
+                        document.getElementById("cityhere").innerHTML = city;
+
                     } else {
-                        document.getElementById("displayCity").innerHTML = 'reached nominatim, but API returned an error';
+                        document.getElementById("cityhere").innerHTML = 'reached nominatim, but API returned an error';
                      }
                 };
+                
                 getCity.send();
-            }
+            };
             
             function getWeatherData() {
+
                 getWeather = new XMLHttpRequest;
                 getWeather.open('GET', "https://thingproxy.freeboard.io/fetch/https://api.darksky.net/forecast/28cfc3c13db8141f0a326f7eaa938d50/" + lat + "," + long, true);
 //                        powered by darksky
@@ -154,95 +184,104 @@
                         
                         wordsummary = JSON.parse(getWeather.responseText).hourly.summary;
                         wordsummary = wordsummary.replace('.', '');
-                        document.getElementById("displayWeatherSummary").innerHTML = wordsummary;
+                        document.getElementById("wordsummaryhere").innerHTML = wordsummary;
                         
 //                        icons from Giacomo Drudi and icon 54 from noun project
                         
                         if (summary == 'clear-day') {
                             summary = ['sun'];
-                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/clear-day.png">';
+                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/clear-day.png">';
                         }
                         
                         else if (summary == 'clear-night') {
                             summary = ['night', 'moon'];
-                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/clear-night.png">';
+                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/clear-night.png">';
                         }
                         
                         else if (summary == 'rain') {
                             summary = ['rain'];
-                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/rain.png">';
+                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/rain.png">';
                         }
                         
                         else if (summary == 'snow') {
                             summary = ['snow'];
-                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/snow.png">';
+                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/snow.png">';
                         }
                         
                         else if (summary == 'sleet') {
                             summary = ['sleet'];
-                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/rain.png">';
+                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/rain.png">';
                         }
                         
                         else if (summary == 'wind') {
                             summary = ['wind', 'breeze'];
-                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/wind.png">';
+                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/wind.png">';
                         }
                         
                         else if (summary == 'fog') {
                             summary = ['fog'];
-                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/fog.png">';
+                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/fog.png">';
                         }
                         
                         else if (summary == 'cloudy') {
                             summary = ['cloud'];
-                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/cloud.png">';
+                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/cloud.png">';
                         }
                         
                         else if (summary == 'partly-cloudy-day') {
                             summary = ['cloud'];
-                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/partly-cloudy-day.png">';
+                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/partly-cloudy-day.png">';
                         }
                         
                         else if (summary == 'partly-cloudy-night') {
                             summary = ['cloud', 'night', 'moon'];
-                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/partly-cloudy-night.png">';
+                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/partly-cloudy-night.png">';
                         }
                         
                         else {
                             summary = ['weather'];
-                            document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/partly-cloudy-day.png">';
+                            document.getElementById("summaryhere").innerHTML = '<img id="weatherImg" src ="images/partly-cloudy-day.png">';
                         };
+                        
                         
                         tempf = JSON.parse(getWeather.responseText).currently.temperature;
                         tempc = Math.round((tempf - 32) * 5 / 9);
-                        document.getElementById("displayTemperature").innerHTML = tempc + '&deg';
+                        document.getElementById("temphere").innerHTML = tempc + '&deg';
                         
                         if (tempc <= 14) {
                             summary.push('cold');
-                            document.getElementById("weatherInfoContainer").style.backgroundColor="#7658F8";
+                            document.getElementById("yowza").style.backgroundColor="#7658F8";
                             document.body.style.color="#7658F8";
                         }
-                        
                         else if (tempc >= 18) {
                             summary.push('warm','heat')
-                            document.getElementById("weatherInfoContainer").style.backgroundColor="#E6567A";
+                            document.getElementById("yowza").style.backgroundColor="#E6567A";
                             document.body.style.color="#E6567A";
                         }
-                        
                         else {
-                            document.getElementById("weatherInfoContainer").style.backgroundColor="#00C0E4";
+                            document.getElementById("yowza").style.backgroundColor="#00C0E4";
                             document.body.style.color="#00C0E4";
                         }
+                        
+                        
                         
                         condition = summary[Math.floor(Math.random()*summary.length)];
                         console.log(condition);
                         
                         getGif();
+                        
+                    } else {
+                        document.getElementById("summaryhere").innerHTML = 'reached darksky, but API returned an error';
+                     }
                 };
+                
                 getWeather.send();
-            }
+                
+            };
 
+            
             function getGif() {
+                
                 backupTerms = ['harry-potter']
                 backupTerm = backupTerms[Math.floor(Math.random()*backupTerms.length)];
                 q = condition + "-" + tv; // search query
@@ -265,9 +304,12 @@
 //                        document.getElementById("giphyme").innerHTML = 'reached giphy, but API returned an error';
                      }
                 };
+
                 request.send();
-            }
-        
+                
+            };
+                
+
         </script>
         
     </body>
