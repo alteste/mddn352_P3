@@ -32,8 +32,8 @@ body {
     font-weight: bolder;
     text-transform: uppercase;
     background: linear-gradient(to bottom right, #F9ED3A, #F3A530);
-    background-clip: text;
-    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h1 {
