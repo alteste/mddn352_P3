@@ -51,7 +51,9 @@ body {
   font-family: 'Arial Black', Arial, sans-serif;
   font-weight: bolder;
   text-transform: uppercase;
-  color: linear-gradient(to bottom right, #F9ED3A, #F3A530); }
+  background: linear-gradient(to bottom right, #F9ED3A, #F3A530);
+  background-clip: text;
+  text-fill-color: transparent; }
 
 h1 {
   font-size: 26px;
