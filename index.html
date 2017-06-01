@@ -108,7 +108,7 @@
             </div>    
 
             <div class="row">  
-                <div class="col-12" id="displayWeatherSummary">
+                <div class="col-12 clip-text" id="displayWeatherSummary">
                 </div>
             </div> 
             
@@ -249,8 +249,12 @@
                         if (tempc <= 14) {
                             summaryWord.push('cold');
                             document.getElementById("weatherInfoContainer").style.background="linear-gradient(to bottom right, #eb3349 , #e12967)";
-                            document.getElementById("displayWeatherSummary").style.background="linear-gradient(to bottom right, #eb3349 , #e12967)";
-                            document.getElementsByClassName("clip-text").style.backgroundClip="text";
+                            var classSelect = document.getElementsByClassName("clip-text");
+                            var ii;
+                            for (ii = 0; ii < classSelect.length); ii++ {
+                                classSelect[ii].style.background="linear-gradient(to bottom right, #eb3349 , #e12967)";
+                                classSelect[ii].style.backgroundClip="text";
+                            }
                             document.body.style.color="#7658F8";
                             
                         }
