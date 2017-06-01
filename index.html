@@ -233,8 +233,8 @@
                         
                         if (tempc <= 14) {
                             summaryWord.push('cold');
-                            document.getElementById("weatherInfoContainer").style.backgroundColor=$primaryColorPurple;
-                            document.body.style.color=$primaryColorPurple;
+                            document.getElementById("weatherInfoContainer").style.backgroundColor="#7658F8";
+                            document.body.style.color="#7658F8";
                         }
                         else if (tempc >= 18) {
                             summaryWord.push('warm','heat')
@@ -242,8 +242,8 @@
                             document.body.style.color="#E6567A";
                         }
                         else {
-                            document.getElementById("weatherInfoContainer").style.backgroundColor=$primaryColorBlue;
-                            document.body.style.color=$primaryColorBlue;
+                            document.getElementById("weatherInfoContainer").style.backgroundColor="#00C0E4";
+                            document.body.style.color="#00C0E4";
                         }
                         
                         weatherCondition = summaryWord[Math.floor(Math.random()*summaryWord.length)];
