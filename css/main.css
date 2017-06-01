@@ -56,7 +56,10 @@ body {
 h1 {
   font-size: 26px;
   margin: 10px;
-  text-align: right; }
+  text-align: right;
+  background: linear-gradient(to bottom right, #F9ED3A, #F3A530);
+  background-clip: text;
+  text-fill-colour: transparent; }
 
 p {
   margin: 10px;
