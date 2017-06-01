@@ -87,8 +87,8 @@
 
             <div class="row">
                 <div class="col-12">
-                    <p id="cityhere"> </p>
-                    <p id="dayDate"></p>
+                    <p id="displayCity"> </p>
+                    <p id="displayDate"></p>
                 </div>
             </div>
 
@@ -123,7 +123,7 @@
             
             var dd = today.getDate();
             
-            document.getElementById("dayDate").innerHTML = weekday[today.getDay()] + " " + dd + "<br>" + months[today.getMonth()];
+            document.getElementById("displayDate").innerHTML = weekday[today.getDay()] + " " + dd + "<br>" + months[today.getMonth()];
             function getLocation() {
                 
                 if (navigator.geolocation) {
@@ -150,9 +150,9 @@
                     if (getCity.readyState == 4 && getCity.status == 200){
                         
                         city = JSON.parse(getCity.responseText).address.state;
-                        document.getElementById("cityhere").innerHTML = city;
+                        document.getElementById("displayCity").innerHTML = city;
                     } else {
-                        document.getElementById("cityhere").innerHTML = 'reached nominatim, but API returned an error';
+                        document.getElementById("displayCity").innerHTML = 'reached nominatim, but API returned an error';
                      }
                 };
                 
