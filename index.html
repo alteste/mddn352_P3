@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="main.css">
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="script.js"></script>
     </head>
@@ -134,14 +134,12 @@
             var dd = today.getDate();
             
             document.getElementById("dayDate").innerHTML = weekday[today.getDay()] + " " + dd + "<br>" + months[today.getMonth()];
-
             function getLocation() {
                 
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(showPosition);
                 }
             };
-
             function showPosition(position) {
                 
                 lat = position.coords.latitude;
@@ -163,7 +161,6 @@
                         
                         city = JSON.parse(getCity.responseText).address.state;
                         document.getElementById("cityhere").innerHTML = city;
-
                     } else {
                         document.getElementById("cityhere").innerHTML = 'reached nominatim, but API returned an error';
                      }
@@ -173,7 +170,6 @@
             };
             
             function getWeatherData() {
-
                 getWeather = new XMLHttpRequest;
                 getWeather.open('GET', "https://thingproxy.freeboard.io/fetch/https://api.darksky.net/forecast/28cfc3c13db8141f0a326f7eaa938d50/" + lat + "," + long, true);
 //                        powered by darksky
@@ -278,7 +274,6 @@
                 getWeather.send();
                 
             };
-
             
             function getGif() {
                 
@@ -291,7 +286,6 @@
                 
                 request = new XMLHttpRequest;
                 request.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&rating=pg&q='+tv, true);
-
                 request.onreadystatechange = function() {
                     if (request.readyState == 4 && request.status == 200){
                         randData = Math.floor(Math.random()*24);
@@ -304,12 +298,10 @@
 //                        document.getElementById("giphyme").innerHTML = 'reached giphy, but API returned an error';
                      }
                 };
-
                 request.send();
                 
             };
                 
-
         </script>
         
     </body>
