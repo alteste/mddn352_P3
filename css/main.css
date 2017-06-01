@@ -129,6 +129,7 @@ img {
   text-align: center; }
 
 .clip-text {
+  background: blue;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
 

@@ -252,6 +252,7 @@
                         weatherCondition = summaryWord[Math.floor(Math.random()*summaryWord.length)];
                         
                         getGif();
+                        console.log('gotgif');
                         
                     } else {
                         document.getElementById("displayWeatherIcon").innerHTML = 'reached darksky, but API returned an error';
