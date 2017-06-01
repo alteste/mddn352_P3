@@ -56,10 +56,7 @@ body {
 h1 {
   font-size: 26px;
   margin: 10px;
-  text-align: right;
-  background: linear-gradient(to bottom right, #F9ED3A, #F3A530);
-  background-clip: text;
-  text-fill-colour: transparent; }
+  text-align: right; }
 
 p {
   margin: 10px;
@@ -105,8 +102,7 @@ img {
   color: white;
   text-align: center;
   font-size: 18px;
-  transition: .3s ease-in-out;
-  background: linear-gradient(to bottom right, #F9ED3A, #F3A530); }
+  transition: .3s ease-in-out; }
 
 #displayWeatherIcon {
   text-align: right;
