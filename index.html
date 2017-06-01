@@ -99,7 +99,7 @@
             </div>
 
             <div class="row" id="weatherInfoContainer">
-                <div class="col-6" id="displayWeatherIcon">
+                <div class="col-6 clip-text" id="displayWeatherIcon">
                 </div>
                 <div class="col-6 temperatureContainer"> 
                     <div id="displayTemperature">
@@ -234,7 +234,8 @@
                         if (tempc <= 14) {
                             summaryWord.push('cold');
                             document.getElementById("weatherInfoContainer").style.background="linear-gradient(to bottom right, #eb3349 , #e12967)";
-                            document.getElementById("displayWeatherSummary").style.background="linear-gradient(to bottom right, #eb3349 , #e12967)";
+                            document.getElementsByClassName("clip-text").style.background="linear-gradient(to bottom right, #eb3349 , #e12967)";
+                            document.getElementsByClassName("clip-text").style.backgroundClip="text";
                             document.body.style.color="#7658F8";
                             
                         }
