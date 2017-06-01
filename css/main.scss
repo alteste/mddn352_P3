@@ -35,13 +35,13 @@ body {
     color: #E6567A;
 }
 
-.login {
+.loginPage {
     width: 100%;
     height: 100%;
     display: table;
 }
 
-.splash {
+.splashContent {
     text-align: center;
     display: table-cell;
     vertical-align: middle;
@@ -52,11 +52,11 @@ body {
     padding: 20px 0 20px 0;
 }
 
-#click {
+#fbLoginButton {
     width: auto;
 }
 
-.forecast {
+.forecastPage {
     display: none;
 }
 
