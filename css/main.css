@@ -127,7 +127,9 @@ img {
 #displayWeatherSummary {
   padding: 20px;
   text-align: center;
-  -webkit-text-fill-color: linear-gradient(to bottom right, #eb3349, #e12967); }
+  background: linear-gradient(to bottom right, #eb3349, #e12967);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
 
 @media screen and (min-width: 321px) {
   body {

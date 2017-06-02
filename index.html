@@ -249,7 +249,9 @@
                         if (tempc <= 14) {
                             summaryWord.push('cold');
                             document.getElementById("weatherInfoContainer").style.background="linear-gradient(to bottom right, #eb3349 , #e12967)";
-//                            document.getElementById("displayWeatherSummary").style.background="linear-gradient(to bottom right, #eb3349 , #e12967)";
+                            document.getElementById("displayWeatherSummary").style.background="linear-gradient(to bottom right, #eb3349 , #e12967)";
+                            document.getElementById("displayWeatherSummary").style.backgroundClip="text";
+                            document.getElementById("displayWeatherSummary").style.color="transparent";
                             
                         }
                         else if (tempc >= 18) {
