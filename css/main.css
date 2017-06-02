@@ -98,7 +98,7 @@ p {
 .container {
   box-shadow: 0 0 10px #e12967; }
 
-.gifContainer {
+#gifContainer {
   height: auto;
   background-color: #E6567A;
   padding-top: 20px; }
