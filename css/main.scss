@@ -33,6 +33,8 @@ body {
     font-weight: bolder;
     text-transform: uppercase;
     color: #E6567A;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h1 {
@@ -124,8 +126,6 @@ img {
 #displayWeatherSummary {
     padding: 20px;
     text-align: center;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .clip-text {   
