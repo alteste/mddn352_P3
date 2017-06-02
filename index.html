@@ -80,7 +80,7 @@
         <div class="forecastPage">
         
             <div class="row">
-                <div class="col-12">
+                <div class="col-12" id="header">
                     <h1>Daily Forecast</h1>
                 </div>
             </div>
@@ -249,7 +249,11 @@
                         if (tempc <= 14) {
                             summaryWord.push('cold');
                             document.getElementById("weatherInfoContainer").style.background="linear-gradient(to bottom right, #eb3349 , #e12967)";
-                            document.body.style.backgroundImage="linear-gradient(to bottom right, #eb3349 , #e12967)";
+                            document.getElementById("displayWeatherSummary").style.backgroundImage="linear-gradient(to bottom right, #eb3349 , #e12967)";
+                            document.getElementById("displayDate").style.backgroundImage="linear-gradient(to bottom right, #eb3349 , #e12967)";
+                            document.getElementById("displayCity").style.backgroundImage="linear-gradient(to bottom right, #eb3349 , #e12967)";
+                            document.getElementById("header").style.backgroundImage="linear-gradient(to bottom right, #eb3349 , #e12967)";
+                            document.body.style.color="#7658F8";
                             
                         }
                         else if (tempc >= 18) {
