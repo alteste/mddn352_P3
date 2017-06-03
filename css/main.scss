@@ -91,7 +91,7 @@ p {
 
 #gifContainer {
     height: auto;
-    background-color: #E6567A;
+    background: linear-gradient(to right, #eb3349 , #e12967);
     padding-top: 15px;
 }
 
@@ -104,7 +104,7 @@ img {
     padding: 20px 0 20px 0;
     width: 100%;
     height: auto;
-    background-color: #E6567A;
+    background: linear-gradient(to right, #eb3349 , #e12967);
     color: white;
     text-align: center;
     font-size: 18px;
@@ -140,9 +140,6 @@ img {
     text-align: center;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-.clip-text {   
 }
 
 @media screen and (min-width: 321px) {
