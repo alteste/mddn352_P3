@@ -57,10 +57,6 @@ h1 {
   margin: 10px;
   text-align: right; }
 
-#header {
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; }
-
 p {
   margin: 10px;
   text-align: right; }
@@ -87,13 +83,7 @@ p {
 
 #displayCity {
   font-size: 24px;
-  margin-bottom: -10px;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; }
-
-#displayDate {
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; }
+  margin-bottom: -10px; }
 
 #gifContainer {
   height: auto;
