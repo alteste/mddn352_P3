@@ -41,6 +41,9 @@ h1 {
 }
 
 #header {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, #eb3349 , #e12967)";
 }
 
 p {
@@ -76,9 +79,14 @@ p {
 #displayCity {
     font-size: 24px;
     margin-bottom: -10px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 #displayDate {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, #eb3349 , #e12967)";
 }
 
 #gifContainer {
