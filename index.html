@@ -91,22 +91,21 @@
                 </div>
             </div>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div id="gifContainer" onclick="getShow(); getGif();"><span id = "giphyme"></span></div>
+            <div class="row">
+                <div class="col-12">
+                    <div id="gifContainer" onclick="getShow(); getGif();"><span id = "giphyme"></span></div>
+                </div>
+            </div>
+
+            <div class="row" id="weatherInfoContainer">
+                <div class="col-6" id="displayWeatherIcon">
+                </div>
+                <div class="col-6 temperatureContainer"> 
+                    <div id="displayTemperature">
                     </div>
                 </div>
-
-                <div class="row" id="weatherInfoContainer">
-                    <div class="col-6" id="displayWeatherIcon">
-                    </div>
-                    <div class="col-6 temperatureContainer"> 
-                        <div id="displayTemperature">
-                        </div>
-                    </div>
-                </div>    
-            </div>
+            </div>    
+        
             <div class="row">  
                 <div class="col-12" id="displayWeatherSummary">
                 </div>
@@ -255,7 +254,7 @@
                             document.getElementById("header").style.backgroundImage="linear-gradient(to bottom right, #eb3349 , #e12967)";
                             
                         }
-                        else if (tempc <= 18) {
+                        else if (tempc >= 18) {
                             summaryWord.push('warm','heat')
                             document.getElementById("gifContainer").style.background="linear-gradient(to right, #eb3349 , #e12967)";
                             document.getElementById("weatherInfoContainer").style.background="linear-gradient(to right, #eb3349 , #e12967)";

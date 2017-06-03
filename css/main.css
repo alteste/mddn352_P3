@@ -95,13 +95,10 @@ p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
-.container {
-  box-shadow: 0 0 10px #e12967; }
-
 #gifContainer {
   height: auto;
   background-color: #E6567A;
-  padding-top: 20px; }
+  padding-top: 15px; }
 
 img {
   width: 100%;
