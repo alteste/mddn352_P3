@@ -60,7 +60,42 @@ h1 {
 #header {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, #eb3349, #e12967) ";\a}\a \ap {\a     margin: 10px;\a     text-align: right;\a}\a \a.loginPage {\a     width: 100%;\a     height: 100%;\a     display: table;\a}\a \a.splashContent {\a     text-align: center;\a     display: table-cell;\a     vertical-align: middle;\a}\a \a#logo {\a     width: 200px;\a     padding: 20px 0 20px 0;\a}\a \a#fbLoginButton {\a     width: auto;\a}\a \a.forecastPage {\a     display: none;\a}\a \a#displayCity {\a     font-size: 24px;\a     margin-bottom: -10px;\a     -webkit-background-clip: text;\a     -webkit-text-fill-color: transparent;\a}\a \a#displayDate {\a     -webkit-background-clip: text;\a     -webkit-text-fill-color: transparent;\a     background-image: linear-gradient(to right, #eb3349 , #e12967)"; }
+  background-image: linear-gradient(to right, #eb3349, #e12967); }
+
+p {
+  margin: 10px;
+  text-align: right; }
+
+.loginPage {
+  width: 100%;
+  height: 100%;
+  display: table; }
+
+.splashContent {
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle; }
+
+#logo {
+  width: 200px;
+  padding: 20px 0 20px 0; }
+
+#fbLoginButton {
+  width: auto; }
+
+.forecastPage {
+  display: none; }
+
+#displayCity {
+  font-size: 24px;
+  margin-bottom: -10px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+#displayDate {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #eb3349, #e12967); }
 
 #gifContainer {
   height: auto;
