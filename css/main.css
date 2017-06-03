@@ -99,8 +99,7 @@ p {
 
 #gifContainer {
   height: auto;
-  background: linear-gradient(to right, #eb3349, #e12967);
-  padding-top: 15px; }
+  background: linear-gradient(to right, #eb3349, #e12967); }
 
 img {
   width: 100%;
