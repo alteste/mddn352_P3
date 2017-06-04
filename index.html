@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="css/main.css">
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="script.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:900" rel="stylesheet">
     </head>
     <body>
         
@@ -277,7 +278,7 @@
             };
             
             function colourChange() {
-                        if (tempc >= 14) {
+                        if (tempc <= 14) {
                             summaryWord.push('cold');
                             document.getElementById("gifContainer").style.background="linear-gradient(to right, #7658F8, #9733EE)";
                             document.getElementById("weatherInfoContainer").style.background="linear-gradient(to right, #7658F8, #9733EE)";
