@@ -60,14 +60,11 @@
                                   numberOfShows = Math.floor(Math.random()*tvShowsList.length);
                                   tvShow = response.data[numberOfShows].name;
                                   tvShow = tvShow.replace('(TV Show)', 'tv');
-                        
-                                  $('.loginPage').show(1);
-                                  $('.forecastPage').hide(1);
                               }
                             }
                         );
                         getLocation();
-                    } else {
+                        
                         $('.loginPage').hide(1);
                         $('.forecastPage').show(1);
                     }
