@@ -25,6 +25,10 @@
                     if (response.status === 'connected') {
                         $('.loginPage').hide(1);
                         $('.forecastPage').show(1);
+                        tvShowsList = response.data;
+                        numberOfShows = Math.floor(Math.random()*tvShowsList.length);
+                        tvShow = response.data[numberOfShows].name;
+                        tvShow = tvShow.replace('(TV Show)', 'tv');
                         getLocation();
                     }
                 });
