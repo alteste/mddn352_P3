@@ -25,6 +25,7 @@
                     if (response.status === 'connected') {
                         $('.loginPage').hide(1);
                         $('.forecastPage').show(1);
+                        getLocation();
                     }
                 });
             };
@@ -132,12 +133,14 @@
             var dd = today.getDate();
             
             document.getElementById("displayDate").innerHTML = weekday[today.getDay()] + " " + dd + "<br>" + months[today.getMonth()];
+            
             function getLocation() {
                 
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(showPosition);
                 }
             };
+            
             function showPosition(position) {
                 
                 lat = position.coords.latitude;
