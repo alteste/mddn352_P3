@@ -22,7 +22,10 @@
                 
                 FB.getLoginStatus(function(response) {
                     console.log(response);
-                    alert('hello');
+                    if (response.status === 'connected') {
+                        $('.loginPage').hide(1);
+                        $('.forecastPage').show(1);
+                    }
                 });
             };
             
