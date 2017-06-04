@@ -59,6 +59,11 @@
                 );
             }
             
+            function isLoggedIn() {
+                AccessToken accessToken = AccessToken.getCurrentAccessToken();
+                return accessToken != null;
+            }
+            
         </script>
         
         <div class="loginPage">
