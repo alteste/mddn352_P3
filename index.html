@@ -7,7 +7,7 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="script.js"></script>
     </head>
-    <body>
+    <body onload="fbLoginStatus">
         
         <script>
             
@@ -27,6 +27,12 @@
              js.src = "//connect.facebook.net/en_US/sdk.js";
              fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
+            
+            function fbLoginStatus(repsonse) {
+                if (response.staus === 'connected') {
+                    console.log('hello');
+                }
+            }
             
             function login() {
                 FB.login(function(response) {
@@ -57,11 +63,6 @@
                       }
                     }
                 );
-            }
-            
-            function isLoggedIn() {
-                AccessToken accessToken = AccessToken.getCurrentAccessToken();
-                return accessToken != null;
             }
             
         </script>
