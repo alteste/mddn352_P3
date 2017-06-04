@@ -29,6 +29,7 @@
             }(document, 'script', 'facebook-jssdk'));
             
             function fbLoginStatus() {
+                console.log('hey');
                 FB.getLoginStatus(function(response) {
                     if (response.status === 'connected') {
                         console.log('hello');
