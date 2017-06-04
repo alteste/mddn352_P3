@@ -64,9 +64,6 @@
                             }
                         );
                         getLocation();
-                        
-                        $('.loginPage').hide(1);
-                        $('.forecastPage').show(1);
                     }
                 }, {scope: 'user_likes'});
             }
@@ -83,6 +80,12 @@
                 );
             }
             
+            function changePage() {
+                console.log('hello');
+                $('.loginPage').hide(1);
+                $('.forecastPage').show(1);    
+            }
+            
         </script>
         
         <div class="loginPage">
@@ -92,7 +95,7 @@
                 </div>
                 <div class="col-12">
                     <div id="fbLoginButton">
-                        <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div>
+                        <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true" onlogin="changePage()"></div>
                     </div>
                 </div>
             </div>
