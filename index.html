@@ -28,11 +28,13 @@
              fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
             
-            function fbLoginStatus(repsonse) {
-                if (response.staus === 'connected') {
-                    console.log('hello');
-                } else {
-                    console.log('nononoon');
+            function fbLoginStatus() {
+                FB.getLoginStatus(function(response) {
+                    if (response.status === 'connected') {
+                        console.log('hello');
+                    } else {
+                        conosle.log('nonono');
+                    }
                 }
             }
             
