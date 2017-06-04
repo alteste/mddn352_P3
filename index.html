@@ -23,13 +23,20 @@
                 FB.getLoginStatus(function(response) {
                     console.log(response);
                     if (response.status === 'connected') {
+                        FB.api("/me/television", function (response) {
+                              if (response && !response.error) {
+                                  tvShowsList = response.data;
+                                  numberOfShows = Math.floor(Math.random()*tvShowsList.length);
+                                  tvShow = response.data[numberOfShows].name;
+                                  tvShow = tvShow.replace('(TV Show)', 'tv');
+                              }
+                            }
+                        );
+                        
+                        getLocation();
+                        
                         $('.loginPage').hide(1);
                         $('.forecastPage').show(1);
-                        tvShowsList = response.data;
-                        numberOfShows = Math.floor(Math.random()*tvShowsList.length);
-                        tvShow = response.data[numberOfShows].name;
-                        tvShow = tvShow.replace('(TV Show)', 'tv');
-                        getLocation();
                     }
                 });
             };
