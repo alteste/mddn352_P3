@@ -166,6 +166,10 @@ img {
   margin-left: 10px;
 }
 
+#squareCheckBox::after {
+  content: '';
+}
+
 .sidenav {
     height: 100%;
     width: 0px;
