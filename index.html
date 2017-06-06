@@ -294,7 +294,7 @@
                         tempc = Math.round((tempf - 32) * 5 / 9);
                         document.getElementById("displayTemperature").innerHTML = tempc + '&deg';
                         
-                        weatherCondition = summaryWord[Math.floor(Math.random()*summaryWord.length)];
+                        
                         
                         colourChange();
                         getGif();
@@ -343,6 +343,8 @@
                 
                 backupTermsList = ['harry-potter']
                 backupTerm = backupTermsList[Math.floor(Math.random()*backupTermsList.length)];
+
+                weatherCondition = summaryWord[Math.floor(Math.random()*summaryWord.length)];
                 searchQuery = weatherCondition + "-" + 'simpsons'; // search query
                 console.log(summaryWord);
                 
