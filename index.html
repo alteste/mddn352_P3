@@ -255,17 +255,17 @@
                         }
                         
                         else if (summaryWord == 'sleet') {
-                            summaryWord = ['sleet'];
+                            summaryWord = ['snow', 'rain'];
                             document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/rain.png">';
                         }
                         
                         else if (summaryWord == 'wind') {
-                            summaryWord = ['wind', 'breeze'];
+                            summaryWord = ['wind', 'windy'];
                             document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/wind.png">';
                         }
                         
                         else if (summaryWord == 'fog') {
-                            summaryWord = ['fog'];
+                            summaryWord = ['fog', 'cloud'];
                             document.getElementById("displayWeatherIcon").innerHTML = '<img id="weatherImg" src ="images/fog.png">';
                         }
                         
@@ -344,7 +344,7 @@
                 backupTermsList = ['harry-potter']
                 backupTerm = backupTermsList[Math.floor(Math.random()*backupTermsList.length)];
                 searchQuery = weatherCondition + "-" + 'simpsons'; // search query
-                console.log(searchQuery);
+                console.log(summaryWord);
                 
                 gifRequest = new XMLHttpRequest;
                 gifRequest.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&rating=pg-13&q='+searchQuery, true);
