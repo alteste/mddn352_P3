@@ -98,7 +98,7 @@
                 </div>
                 <div class="row">
 	                <div class="col-12">
-	                	<p>Info <br> &#8964;</p>
+	                	<p>Info<span id="infoOpenButton" onclick="openInfo()">&#8964;</span></p>
 	                </div>
                 </div>
             </div>
@@ -180,6 +180,14 @@
 	    </div>
         
         <script>
+
+			function openInfo() {
+			    document.getElementById("myInfoScreen").style.height = "250px";
+			}
+
+			function closeInfo() {
+			    document.getElementById("myInfoScreen").style.height = "0px";
+			}
 
             function openNav() {
 			    document.getElementById("mySidenav").style.width = "250px";
