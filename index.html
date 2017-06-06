@@ -180,9 +180,9 @@
 			var developer = "off"
 			console.log(developer);
 			function developerMode() {
-				if (developer = "off") {
+				if (developer == "off") {
 					developer = "on";
-				} else if (developer = "on") {
+				} else if (developer == "on") {
 					developer = "off";
 				}
 				console.log(developer);
@@ -358,12 +358,14 @@
                 weatherCondition = summaryWord[Math.floor(Math.random()*summaryWord.length)];
                 simpsonsSearch = weatherCondition + "-" + 'simpsons'; // search query
 
-                if (developer = "on") {
+                if (developer == "on") {
                 	searchQuery = simpsonsSearch;
-                } else if (developer = "off") {
+                } else if (developer == "off") {
                 	searchQuery = tvShow;
                 }
                 
+                console.log(searchQuery);
+
                 gifRequest = new XMLHttpRequest;
                 gifRequest.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&rating=pg-13&q='+searchQuery, true);
                 gifRequest.onreadystatechange = function() {
