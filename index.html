@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="css/main.css">
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="script.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Raleway:900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:900" rel="stylesheet">
     </head>
     <body>
         
@@ -106,6 +106,14 @@
         </div>
             
         <div class="forecastPage">
+        	<div id="mySidenav" class="sidenav">
+			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			  <a href="#">About</a>
+			  <a href="#">Services</a>
+			  <a href="#">Clients</a>
+			  <a href="#">Contact</a>
+			</div>
+			<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
             <div id="fbLoginButton">
                 <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true" onlogin="reloadPage()"></div>
             </div>
@@ -145,7 +153,15 @@
         </div>
         
         <script>
-            
+        
+            function openNav() {
+			    document.getElementById("mySidenav").style.width = "250px";
+			}
+
+			function closeNav() {
+			    document.getElementById("mySidenav").style.width = "0";
+			}
+
             var weekday = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
             var months = new Array ("January","February","March","April","May","June","July","August","September","Ocotber","November","December");
             
