@@ -154,7 +154,7 @@ img {
 }
 
 #menuCloseButton {
-  margin-left: 50px;
+  text-align: right;
 }
 
 .sidenav {
@@ -167,7 +167,7 @@ img {
     background: linear-gradient(to right, #eb3349, #e12967);
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding-top: 20px;
 }
 
 .sidenav a {
