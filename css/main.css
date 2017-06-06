@@ -152,7 +152,7 @@ img {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background: linear-gradient(to right, #eb3349, #e12967);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
