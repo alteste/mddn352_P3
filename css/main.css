@@ -157,6 +157,10 @@ img {
   margin-left: 60px;
 }
 
+#developCheckBox {
+  color: white;
+}
+
 .sidenav {
     height: 100%;
     width: 0;
