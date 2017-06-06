@@ -141,6 +141,10 @@ img {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
+#menuButton {
+  margin: 10px 0 10px 10px;
+}
+
 .sidenav {
     height: 100%;
     width: 0;
