@@ -53,7 +53,7 @@ body {
   text-transform: uppercase; }
 
 h1 {
-  font-size: 26px;
+  font-size: 24px;
   margin: 10px;
   text-align: right; }
 
@@ -91,7 +91,7 @@ p {
   display: none; }
 
 #displayCity {
-  font-size: 24px;
+  font-size: 22px;
   margin-bottom: -10px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
