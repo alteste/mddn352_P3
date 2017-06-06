@@ -144,12 +144,16 @@ img {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
+#menuOpenButton {
+  margin: 10px;
+}
+
 #menuHeader {
   color: white;
   text-align: left;
 }
 
-#menuButton {
+#menuCloseButton {
   margin-left: 50px;
 }
 
