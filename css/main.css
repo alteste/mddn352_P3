@@ -224,7 +224,9 @@ label:active:after {
 #darkskyAttribution {
   margin: 10px;
   text-align: center;
-  min-width: 230px;
+  width: 200px;
+  position: absolute;
+  bottom: 10px;
 }
 
 @media screen and (min-width: 321px) {
