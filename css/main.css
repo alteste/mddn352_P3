@@ -148,6 +148,12 @@ img {
   margin: 10px;
 }
 
+#menuHeader {
+  color: white;
+  text-align: left;
+  padding-left: 32px;
+}
+
 .sidenav {
     height: 100%;
     width: 0;
