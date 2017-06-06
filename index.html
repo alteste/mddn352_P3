@@ -115,7 +115,7 @@
 				</div>
 				<div class="row">
 					<div class="col-12">
-						<a href="#">Developer</a>
+						<a href="#" onclick="developerMode()">Developer</a>
 					</div>
 				</div>
 				<div class="row">
@@ -169,12 +169,22 @@
 
             function openNav() {
 			    document.getElementById("mySidenav").style.width = "250px";
-			    document.getElementById("mainContent").style.filter ="opacity(30%)"
+			    document.getElementById("mainContent").style.filter ="opacity(30%)";
 			}
 
 			function closeNav() {
 			    document.getElementById("mySidenav").style.width = "0";
-			    document.getElementById("mainContent").style.filter ="opacity(100%)"
+			    document.getElementById("mainContent").style.filter ="opacity(100%)";
+			}
+
+			var developer = "off"
+
+			developerMode() {
+				if (developer = "off") {
+					developer = "on";
+				} else if (developer = "on") {
+					developer = "off";
+				}
 			}
 
             var weekday = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
@@ -345,8 +355,13 @@
                 backupTerm = backupTermsList[Math.floor(Math.random()*backupTermsList.length)];
 
                 weatherCondition = summaryWord[Math.floor(Math.random()*summaryWord.length)];
-                searchQuery = weatherCondition + "-" + 'simpsons'; // search query
-                console.log(summaryWord);
+                simpsonsSearch = weatherCondition + "-" + 'simpsons'; // search query
+
+                if (developer = "on") {
+                	searchQuery = simpsonsSearch;
+                } else if (developer = "off") {
+                	searchQuery = tvShow;
+                }
                 
                 gifRequest = new XMLHttpRequest;
                 gifRequest.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&rating=pg-13&q='+searchQuery, true);
