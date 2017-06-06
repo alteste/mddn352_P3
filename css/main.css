@@ -103,7 +103,7 @@ p {
 
 #gifContainer {
   height: auto;
-  background: linear-gradient(to right, #eb3349, #e12967); }
+  background: transparent url('http://thinkfuture.com/wp-content/uploads/2013/10/loading_spinner.gif') center no-repeat;
 
 img {
   width: 100%;
