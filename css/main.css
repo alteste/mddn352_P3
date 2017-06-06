@@ -144,13 +144,13 @@ img {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
-#menuButton {
-  margin: 10px;
-}
-
 #menuHeader {
   color: white;
   text-align: left;
+}
+
+#menuButton {
+  margin-left: 50px;
 }
 
 .sidenav {
@@ -167,7 +167,7 @@ img {
 }
 
 .sidenav a {
-    padding: 8px 8px 8px 32px;
+    margin: 10px;
     text-decoration: none;
     font-size: 25px;
     color: white;
@@ -177,14 +177,6 @@ img {
 
 .sidenav a:hover, .offcanvas a:focus{
     color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
 }
 
 @media screen and (min-width: 321px) {
