@@ -177,15 +177,13 @@
 			    document.getElementById("mainContent").style.filter ="opacity(100%)";
 			}
 
-			var developer = "off"
-			console.log(developer);
+			var developer = "on"
 			function developerMode() {
 				if (developer == "off") {
 					developer = "on";
 				} else if (developer == "on") {
 					developer = "off";
 				}
-				console.log(developer);
 			}
 
             var weekday = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
@@ -363,8 +361,6 @@
                 } else if (developer == "off") {
                 	searchQuery = tvShow;
                 }
-                
-                console.log(searchQuery);
 
                 gifRequest = new XMLHttpRequest;
                 gifRequest.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&rating=pg-13&q='+searchQuery, true);
