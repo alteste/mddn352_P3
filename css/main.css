@@ -221,6 +221,12 @@ label:active:after {
     padding-top: 20px;
 }
 
+#darkskyAttribution {
+  margin: 10px;
+  text-align: center;
+  min-width: 230px;
+}
+
 @media screen and (min-width: 321px) {
   body {
     height: 568px;
