@@ -343,10 +343,10 @@
                 
                 backupTermsList = ['harry-potter']
                 backupTerm = backupTermsList[Math.floor(Math.random()*backupTermsList.length)];
-                searchQuery = weatherCondition + "-" + tvShow; // search query
+                searchQuery = weatherCondition + "-" + 'simpsons'; // search query
                 
                 gifRequest = new XMLHttpRequest;
-                gifRequest.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&rating=pg&q='+tvShow, true);
+                gifRequest.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&rating=pg&q='+searchQuery, true);
                 gifRequest.onreadystatechange = function() {
                     if (gifRequest.readyState == 4 && gifRequest.status == 200){
                         randData = Math.floor(Math.random()*24);
