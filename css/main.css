@@ -146,7 +146,7 @@ img {
 
 #menuButton {
   display: table-cell;
-  vertical-align: middle;
+  vertical-align: middle; }
 
 .sidenav {
     height: 100%;
