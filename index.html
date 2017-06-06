@@ -344,7 +344,7 @@
                 backupTermsList = ['harry-potter']
                 backupTerm = backupTermsList[Math.floor(Math.random()*backupTermsList.length)];
                 searchQuery = weatherCondition + "-" + 'simpsons'; // search query
-                console.log('searchQuery');
+                console.log(searchQuery);
                 
                 gifRequest = new XMLHttpRequest;
                 gifRequest.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&rating=pg&q='+searchQuery, true);
