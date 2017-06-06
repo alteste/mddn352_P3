@@ -142,10 +142,6 @@ img {
   -webkit-text-fill-color: transparent; }
 
 #menuButton {
-  margin: 10px 0 10px 10px;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, #eb3349, #e12967); }
 }
 
 .sidenav {
