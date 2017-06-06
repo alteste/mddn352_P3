@@ -150,11 +150,15 @@ img {
 
 #menuHeader {
   color: white;
+  display: block;
   text-align: left;
 }
 
 #menuCloseButton {
-  text-align: right;
+  display: block;
+  float: right;
+  width: 50%;
+  margin-left: 10px;
 }
 
 .sidenav {
