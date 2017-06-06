@@ -163,9 +163,7 @@ img {
 }
 
 #squareCheckBox {
-  width: 20px;
-  height: 20px;
-  background: #ddd;
+  margin-left: 10px;
 }
 
 .sidenav {
