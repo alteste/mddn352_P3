@@ -146,7 +146,9 @@ img {
   -webkit-text-fill-color: transparent; }
 
 #menuOpenButton {
-  margin: 10px;
+  margin-top: -1px;
+  display: block;
+  float: left;
 }
 
 #menuHeader {
