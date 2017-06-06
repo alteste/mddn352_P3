@@ -142,6 +142,7 @@ img {
   -webkit-text-fill-color: transparent; }
 
 #menuButton {
+  margin: 10px 0 10px 10px;
 }
 
 .sidenav {
