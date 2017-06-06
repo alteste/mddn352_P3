@@ -141,13 +141,6 @@ img {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
-.menuButtonContainer {
-  display: table; }
-
-#menuButton {
-  display: table-cell;
-  vertical-align: middle; }
-
 .sidenav {
     height: 100%;
     width: 0;
