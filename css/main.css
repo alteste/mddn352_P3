@@ -93,7 +93,17 @@ p {
 }
 
 #infoButtonContainer {
-	text-align: center;
+	background-color: red;
+	padding: 10px 0;
+}
+
+#infoButtonBorder {
+  display: inline-block;
+  margin: auto;
+  width: auto;
+  border: 1px solid white;
+  text-align: center;
+  padding: 2px 10px
 }
 
 .infoScreen {
