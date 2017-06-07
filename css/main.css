@@ -106,13 +106,12 @@ p {
   text-align: center;
   padding: 2px 10px;
   color: white;
+  transition: .3s ease-in-out;
 }
 
 #infoButtonBorder:hover {
 	background-color: white;
 	color: #eb3349;
-	margin-top: 10px;
-	width: 90%;
 }
 
 .infoScreen {
