@@ -84,16 +84,17 @@ p {
   background-color: white;
   text-align: center;
   padding: 8px 0;
+  position: absolute;
+  display: block;
+  width: 100%;
+  bottom: 10;
 }
 
 #fbLogoutButton {
   background-color: white;
   text-align: center;
   padding: 8px 0;
-  position: absolute;
-  display: block;
-  width: 100%;
-  bottom: 10;
+  margin-top: 10px;
 }
 
 #infoButtonContainer {
