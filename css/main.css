@@ -92,6 +92,10 @@ p {
   margin-top: 10px;
 }
 
+#infoButtonContainer {
+	text-align: center;
+}
+
 .infoScreen {
     height: 0;
     width: 100%;
