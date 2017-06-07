@@ -93,7 +93,7 @@ p {
 }
 
 #infoButtonContainer {
-	background-color: red;
+	background: linear-gradient(to right, #eb3349, #e12967);
 	padding: 10px 0;
 }
 
@@ -101,9 +101,14 @@ p {
   display: inline-block;
   margin: auto;
   width: auto;
-  border: 1px solid white;
+  border: 2px solid white;
   text-align: center;
   padding: 2px 10px
+}
+
+#infoButtonBorder:hover {
+	background-color: white;
+	color: #eb3349;
 }
 
 .infoScreen {
