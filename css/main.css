@@ -109,7 +109,6 @@ p {
   text-align: center;
   padding: 2px 10px;
   color: white;
-  transition: .3s ease-in-out;
 }
 
 #infoButtonBorder:hover {
