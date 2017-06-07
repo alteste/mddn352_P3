@@ -188,7 +188,6 @@
 	    </div>
         
         <script>
-
 			var isInfoOpen = "off"
 			function checkInfo() {
 				if (isInfoOpen == "off") {
@@ -199,27 +198,22 @@
 					closeInfo();
 				}
 			}
-
 			function openInfo() {
-				document.getElementById("infoButtonBorder").setAttribute("style", "background-color: white; color: #eb3349");
 			    document.getElementById("myInfoScreen").style.height = "250px";
+				document.getElementById("myInfoScreen").style.width = "100%";
 			}
-
 			function closeInfo() {
-				document.getElementById("infoButtonBorder").setAttribute("style", "background-color: none; color: none");
 			    document.getElementById("myInfoScreen").style.height = "0px";
+				document.getElementById("myInfoScreen").style.width = "auto";
 			}
-
             function openNav() {
 			    document.getElementById("mySidenav").style.width = "250px";
 			    document.getElementById("mainContent").style.filter ="opacity(30%)";
 			}
-
 			function closeNav() {
 			    document.getElementById("mySidenav").style.width = "0px";
 			    document.getElementById("mainContent").style.filter ="opacity(100%)";
 			}
-
 			var developer = "off"
 			function developerMode() {
 				if (developer == "off") {
@@ -228,7 +222,6 @@
 					developer = "off";
 				}
 			}
-
             var weekday = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
             var months = new Array ("January","February","March","April","May","June","July","August","September","Ocotber","November","December");
             
@@ -395,16 +388,13 @@
                 
                 backupTermsList = ['harry-potter']
                 backupTerm = backupTermsList[Math.floor(Math.random()*backupTermsList.length)];
-
                 weatherCondition = summaryWord[Math.floor(Math.random()*summaryWord.length)];
                 simpsonsSearch = weatherCondition + "-" + 'simpsons'; // search query
-
                 if (developer == "on") {
                 	searchQuery = simpsonsSearch;
                 } else if (developer == "off") {
                 	searchQuery = backupTerm;
                 }
-
                 gifRequest = new XMLHttpRequest;
                 gifRequest.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&rating=pg-13&q='+searchQuery, true);
                 gifRequest.onreadystatechange = function() {
