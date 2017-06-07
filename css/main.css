@@ -126,7 +126,6 @@ p {
     left: 0px;
     background: linear-gradient(to right, #eb3349, #e12967);
     overflow-x: hidden;
-    transition: 0.5s;
 	overflow: hidden;
 }
 
@@ -134,7 +133,7 @@ p {
 	text-align: center;
 	color: white;
 	font-size: 15px;
-	padding: 0 20px;
+	padding: 0 20px 10px 20px;
 }
 
 .forecastPage {
