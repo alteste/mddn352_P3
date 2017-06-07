@@ -90,12 +90,14 @@ p {
   background-color: white;
   text-align: center;
   padding: 8px 0;
-  margin-top: 10px;
+  position: absolute;
+  display: block;
+  width: 100%;
+  bottom: 10;
 }
 
 #infoButtonContainer {
 	background: linear-gradient(to right, #eb3349, #e12967);
-	padding: 10px 0;
 }
 
 #infoButtonBorder {
