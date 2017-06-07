@@ -60,7 +60,9 @@ h1 {
 #header {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, #eb3349, #e12967); }
+  background-image: linear-gradient(to right, #eb3349, #e12967); 
+  margin-top: 10px;
+}
 
 p {
   margin: 10px;
@@ -154,7 +156,9 @@ p {
   background: linear-gradient(to right, #eb3349, #e12967); }
 
 img {
-  width: 100%; }
+  width: 100%; 
+  max-height: 200px;
+}
 
 #weatherInfoContainer {
   padding: 20px 0 20px 0;
