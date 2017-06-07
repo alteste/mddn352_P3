@@ -130,6 +130,11 @@ p {
     transition: 0.5s;
 }
 
+#infoContent {
+	text-align: center;
+	color: white;
+}
+
 .forecastPage {
   display: none; }
 
