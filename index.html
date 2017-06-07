@@ -97,7 +97,7 @@
                 </div>
                 <div class="row">
 	                <div class="col-12" id="infoButtonContainer">
-	                	<p id="infoButtonBorder" onclick="checkInfo()">Info <span id ="arrowGlyph">&#8964;</span></p>
+	                	<p id="infoButtonBorder" onclick="checkInfo()">Info</p>
 	                </div>
 		            <div class="infoScreen" id="myInfoScreen">
 			            <div class="col-12">
@@ -193,13 +193,13 @@
 			}
 
 			function openInfo() {
-				document.getElementById("arrowGlyph").innerHTML = "&#8963";
 			    document.getElementById("myInfoScreen").style.height = "250px";
+				document.getElementById("myInfoScreen").style.width = "80%";
 			}
 
 			function closeInfo() {
-				document.getElementById("arrowGlyph").innerHTML = "&#8964";
 			    document.getElementById("myInfoScreen").style.height = "0px";
+				document.getElementById("myInfoScreen").style.width = "auto";
 			}
 
             function openNav() {
