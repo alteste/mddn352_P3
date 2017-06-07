@@ -392,9 +392,9 @@
                 backupTerm = backupTermsList[Math.floor(Math.random()*backupTermsList.length)];
                 weatherCondition = summaryWord[Math.floor(Math.random()*summaryWord.length)];
                 simpsonsSearch = weatherCondition + "-" + 'simpsons'; // search query
-                if (developer == "on") {
+                if (developer == "off") {
                 	searchQuery = simpsonsSearch;
-                } else if (developer == "off") {
+                } else if (developer == "on") {
                 	searchQuery = backupTerm;
                 }
                 gifRequest = new XMLHttpRequest;
