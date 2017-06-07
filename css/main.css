@@ -128,7 +128,6 @@ p {
     overflow-x: hidden;
     transition: 0.5s;
 	overflow: hidden;
-	padding-bottom: 10px;
 }
 
 #infoContent {
