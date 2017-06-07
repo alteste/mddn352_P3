@@ -111,12 +111,14 @@ p {
 #infoButtonBorder:hover {
 	background-color: white;
 	color: #eb3349;
+	margin-top: 10px;
+	width: 90%;
 }
 
 .infoScreen {
     height: 0;
     width: 100%;
-    position: fixed;
+    position: relative;
     z-index: 1;
     bottom: 0;
     left: 0px;
